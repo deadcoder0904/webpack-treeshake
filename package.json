@@ -4,13 +4,13 @@
   "description": "",
   "main": "app.js",
   "scripts": {
-    "start": "webpack"
+    "start": "webpack --optimize-minimize --mode production"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "devDependencies": {
-    "uglifyjs-webpack-plugin": "^1.1.8",
-    "webpack": "^3.11.0"
+    "webpack": "^4.0.0-beta.1",
+    "webpack-cli": "^2.0.6"
   }
 }
