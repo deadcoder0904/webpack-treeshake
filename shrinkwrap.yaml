@@ -1,5 +1,4 @@
 dependencies:
-  lodash: 4.17.5
   lodash-es: 4.17.5
 devDependencies:
   babel-core: 6.26.0
@@ -3011,6 +3010,7 @@ packages:
     resolution:
       integrity: sha512-Ez3ONp3TK9gX1HYKp6IhetcVybD+2F+Yp6GS9dfH8ue6EOCEzQtQEh4K0FYWBP9qLv+lzeQAYXw+3ySfxyZqkw==
   /lodash/4.17.5:
+    dev: true
     resolution:
       integrity: sha512-svL3uiZf1RwhH+cWrfZn3A4+U58wbP0tGVTLQPbjplZxZ8ROD9VLuNgsRniTlLe7OlSqR79RUehXgpBW/s0IQw==
   /log-symbols/1.0.2:
@@ -5208,7 +5208,6 @@ specifiers:
   babel-core: ^6.26.0
   babel-loader: ^7.1.2
   babel-preset-env: ^1.6.1
-  lodash: ^4.17.5
   lodash-es: ^4.17.5
   uglifyjs-webpack-plugin: ^1.1.8
   webpack: ^4.0.0-beta.1
