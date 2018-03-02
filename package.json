@@ -4,10 +4,10 @@
   "description": "",
   "main": "app.js",
   "scripts": {
-    "dev": "webpack --optimize-minimize --mode development",
-    "dev:watch": "webpack --watch --optimize-minimize --mode development",
-    "prod": "webpack -p --optimize-minimize --mode production",
-    "prod:watch": "webpack -p --watch --optimize-minimize --mode production",
+    "dev": "webpack --mode development",
+    "dev:watch": "JARVIS=true npm run dev -- --watch",
+    "prod": "webpack --mode production",
+    "prod:watch": "JARVIS=true npm run prod -- --watch",
     "start": "npm run prod",
     "clean": "rm -rf dist"
   },
@@ -18,7 +18,7 @@
     "babel-core": "^6.26.0",
     "babel-loader": "^7.1.2",
     "babel-preset-env": "^1.6.1",
-    "uglifyjs-webpack-plugin": "^1.1.8",
+    "lodash-webpack-plugin": "^0.11.4",
     "webpack": "^4.0.0-beta.1",
     "webpack-cli": "^2.0.6",
     "webpack-jarvis": "^0.3.0"

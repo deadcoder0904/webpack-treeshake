@@ -1,17 +1,13 @@
 const path = require("path");
 const webpack = require("webpack");
-const UglifyJSPlugin = require("uglifyjs-webpack-plugin");
+const LodashWebpackPlugin = require("lodash-webpack-plugin");
 const Jarvis = require("webpack-jarvis");
-
-let plugins = [new Jarvis()];
-
-if (process.env.NODE_ENV === "production") plugins.push(new UglifyJSPlugin());
 
 const config = {
   entry: "./app.js",
   output: {
     path: path.resolve(__dirname, "dist"),
-    filename: "bundle.js"
+    filename: "[name].[hash].js"
   },
   module: {
     rules: [
@@ -22,7 +18,21 @@ const config = {
       }
     ]
   },
-  plugins
+  plugins: [new LodashWebpackPlugin()].concat(
+    process.env.JARVIS ? [new Jarvis()] : []
+  ),
+  optimization: {
+    splitChunks: {
+      cacheGroups: {
+        vendor: {
+          test: /node_modules/,
+          name: "vendor",
+          chunks: "initial",
+          enforce: true
+        }
+      }
+    }
+  }
 };
 
 module.exports = config;
